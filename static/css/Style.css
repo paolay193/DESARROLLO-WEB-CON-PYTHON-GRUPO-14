@@ -78,9 +78,10 @@ h3{
 }
 
 #paciente{
+    background: #dbd3d3;
     position: fixed;
     right:40%;
-    top:10%;
+    top:20%;
     text-align:center;
 
 }

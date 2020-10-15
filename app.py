@@ -65,6 +65,13 @@ def ingresar_medico():
         mysql.connection.commit()
         return redirect(url_for("medico"))
 
+@app.route("/paciente")
+def paciente():
+    conn= mysql.connect.cursor()
+    conn.execute("select * from Paciente")
+    paciente = conn.fetchall()
+    return render_template("f_paciente.html", pacientes = paciente)
+
 @app.route("/ingresar_paciente", methods=["POST"])
 def ingresar_paciente():
     if request.method=="POST":
@@ -80,7 +87,7 @@ def ingresar_paciente():
         par_pac = request.form["parentesco"]
         id_med_pac = request.form["id_med_pac"]
         conn = mysql.connection.cursor()
-        conn.execute("""insert into Medico(id_med,nom_med,ape_med,esp_med,tel_med,cor_med,dir_med,id_med_pac)
+        conn.execute("""insert into Medico(id_pac,nom_pac,ape_pac,tel_pac,cor_pac,dir_pac,rh_pac,eps_pac,fam_pac,par_pac,id_med_pac)
         values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
         """,(iden_pac,nombre_pac,apellido_pac,tel_pac,correo_pac,direccion_pac,rh_pac,eps_pac,fam_pac,par_pac,id_med_pac))
         mysql.connection.commit()
@@ -110,9 +117,7 @@ def consulta():
 def remision():
     return render_template("f_Remision.html")
 
-@app.route("/paciente")
-def paciente():
-    return render_template("f_paciente.html")
+
 
 
 if __name__ == "__main__":
