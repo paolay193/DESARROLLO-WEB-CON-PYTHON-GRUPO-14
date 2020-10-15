@@ -1,53 +1,70 @@
 <link rel="Stylesheet" href="/static/css/Style.css">
-<form action ="/inicio", method="POST">
+
+<form action ="/ingrear_medico", method="POST">
+    <div id="medico">
     <table>
+        <h3 id="titulo">Medico<h3>
         <tr>
             <td>
-                <label for="id">id:</label>
-                <input type="text" name="id" id="idMed">
+                <label for="id">identificacion:</label>
+            </td>
+            <td>
+                <input type="text" name="id_med" id="idMed" required>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="name">Nombre:</label>
-                <input type="text" name="name" id="nameMed">
+            </td>
+            <td>
+                <input type="text" name="name_med" id="nameMed" required>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="apellido">Apellido:</label>
-                <input type="text" name="apellido" id="apelMed">
+            </td>
+            <td>
+                <input type="text" name="apel_med" id="apelMed" required>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="telefono">Telefono:</label>
-                <input type="number" name="telefono" id="telMed">
+            </td>
+            <td>
+                <input type="number" name="tele_med" id="telMed" required>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="email">correo:</label>
-                <input type="text" name="email" id="emlMed"> 
+            </td>
+            <td>
+                <input type="text" name="ema_med" id="emlMed" required> 
             </td>
         </tr>
         <tr>
             <td>
-                <select name="" id="">
-                    <option value="">Escoja su especialidad</option>
-                    <option>Cirujano</option>
-                    <option>Ortopedista</option>
+                <label for="especialidad">Especialidad</label>
+            </td>
+            <td>
+                <select name="esp_med" id="espe_med">
+                    <option value="1">Cirujano</option>
+                    <option value="2">Ortopedista</option>
                 </select>
             </td>
         </tr>
             <tr>
                 <td>
                     <label for="direccion">direccion</label>
-                    <input type="text" name="direccion" id="dirMed">
+                </td>
+                <td>
+                    <input type="text" name="dir_med" id="dirMed" required>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <input type="submit"  class="btn2" name="ingresar"value="ingresar">
                     <input type="submit"  class="btn2" name="actualizar"value="actualizar">
                     <input type="submit"  class="btn2" name="eliminar"value="eliminar">

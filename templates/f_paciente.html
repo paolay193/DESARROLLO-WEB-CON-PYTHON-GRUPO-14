@@ -1,64 +1,87 @@
 <link rel="Stylesheet" href="/static/css/Style.css">
-<form>
+
+<form action ="/paciente" method="POST">
+    <div id="paciente">
     <table>
+        <h3 id="titulo">Paciente:<h2>
         <tr>
             <td>
                 <label for="id">Identifiacion:</label>
+            </td>
+            <td>
                 <input type="number" name="id" id="idPac" required>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="name">Nombre:</label>
+            </td>
+            <td>
                 <input type="text" name="name" id="namePac" required>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="apellido">Apellido:</label>
+            </td>
+            <td>
                 <input type="text" name="apellido" id="apelPac" required>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="telefono">Telefono:</label>
+            </td>
+            <td>
                 <input type="number" name="telefono" id="telPac" required>
             </td>
         <tr>
             <td>
                 <label for="email">Correo:</label>
+            </td>
+            <td>
                 <input type="email" name="email" id="emaiPac" required>
             </td>
         <tr>
             <td>
                 <label for="direccion">Direccion:</label>
+            </td>
+            <td>
                 <input type="text" name="direccion" id="direcPac" required>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="grupo rh">grupo Rh:</label>
+            </td>
+            <td>
                 <input type="text" name="grupo rh" id="rhPac" required>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="eps">EPS:</label>
+            </td>
+            <td>
                 <input type="text" name="eps" id="epsPac" required>
             </td>
         <tr>
             <td>
-                <label for="famlPac">Familiar Paciente</label>
+                <label for="famlPac">Familiar Paciente:</label>
+            </td>
+            <td>
                 <input type="text" name="famlPac" id="famlPac" required>
             </td>
         <tr>
             <td>
-                <label for="parentesco">Parentesco</label>
+                <label for="parentesco">Parentesco:</label>
+            </td>
+            <td>
                 <input type="text" name="parentesco" id="parPac" required>
             </td>
         </tr>
         <tr>
-            <td>
+            <td colpas="2">
                 <input type="submit"  class="btn2" name="ingresar"value="ingresar">
                 <input type="submit"  class="btn2" name="actualizar"value="actualizar">
                 <input type="submit"  class="btn2" name="eliminar"value="eliminar">
@@ -66,4 +89,5 @@
         </tr>
 
     </table>
+    </div>
 </form>

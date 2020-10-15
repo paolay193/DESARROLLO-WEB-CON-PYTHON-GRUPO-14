@@ -1,0 +1,36 @@
+<link rel="Stylesheet" href="/static/css/Style.css">
+<form action="/laboratorio", method="POST">
+    <div id="laboratorio">
+    <table>
+        <h3 id="titulo">Laboratorio<h3>
+       <tr> 
+           <td> 
+                <label for="codigo" >Codigo:</label>   
+            </td>
+            <td>  
+                <input  type="number" name="codigo" id="codLab" required > 
+            </td>
+        </tr> 
+        <tr> 
+            <td> 
+                <label for="codigo">Codigo de la consulta:</label>
+            </td>
+            <td>
+                 <input type="text"  name="codigo" id="codiCon" required>  
+            </td>
+        </tr>
+        <tr>
+            <td> 
+                <label for="examen">Examen de laboratorio:</label>
+            </td>
+            <td>
+                <input type="text"  name="examen" id="exam">
+            </td>
+        </tr> 
+        <tr>
+            <td colspan="2">
+                <input id="boton" type="submit" class="btn2" name="ingresar"value="ingresar">
+            </td>
+        </tr>
+    </table>
+</form>

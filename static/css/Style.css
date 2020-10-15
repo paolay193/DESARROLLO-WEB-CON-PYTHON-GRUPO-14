@@ -1,0 +1,88 @@
+#login{
+border: solid #9DF8FF 3px;
+text-align: center;
+}
+h3{
+    text-align: center;
+    
+}
+#cuerpo{
+    background: violet;
+    
+}
+
+#consulta{
+    width:380px;
+    height:380px;
+    position: fixed;
+    right:40%;
+    top:20%;
+    border: 3px solid #793030;
+    text-align:center;
+}
+#titulo{
+    font-size:30px;
+    font-family: cursive;
+
+}
+
+#laboratorio{
+    width:380px;
+    height: 250px;
+    position: fixed;
+    right:40%;
+    top:20%;
+    border: 3px solid #793030;
+    text-align:center;
+}
+#boton{
+    float:right;
+}
+
+#medico{
+    width:380px;
+    height:320px;
+    position: fixed;
+    right:40%;
+    top:20%;
+    border: 3px solid #793030;
+    text-align:center;
+}
+.btn2{
+    float:right;
+}
+
+#inicio{
+    position: fixed;
+    right:40%;
+    top:20%;
+    text-align:center;
+}
+.boton{
+    float:right;
+}
+
+#paciente{
+    position: fixed;
+    right:40%;
+    top:20%;
+    text-align:center;
+
+}
+
+#remision{
+    width:380px;
+    height:280px;
+    position: fixed;
+    right:40%;
+    top:20%;
+    border: 3px solid #793030;
+    text-align:center;
+}
+
+.btn3{
+    float:right;
+
+#nav{
+    border:
+}

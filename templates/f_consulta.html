@@ -1,66 +1,88 @@
 <link rel="Stylesheet" href="/static/css/Style.css">
-<form action="consulta">
+<form action="/consulta", method="POST">
+    <div id="consulta">
     <table>
+        <h3 id="titulo">consulta<h3>
         <tr>
             <td>
                 <label for="codigo">Codigo:</label>
+            </td>
+            <td>
                 <input type="number" name="codigo" id="codCon" required>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="fechconsulta">Fecha Consulta:</label>
+            </td>
+            <td>
                 <input type="date" name="fechconsulta" id="fechCon" required>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="hora">Hora:</label>
+            </td>
+            <td>
                 <input type="time" name="hora" id="hora" required>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="sintpaciente">Sintomas Paciente:</label>
+            </td>
+            <td>
                 <input type="text" name="sintpaciente" id="sintPac" required>
             </td>
         </tr>
         <tr>
             <td>
                 <label for="observacion">observacion:</label>
-                <input type="text" name="observacion" id="obseCon" required}>
+            </td>
+            <td>
+                <input type="text" name="observacion" id="obseCon" required>
+            </td>
          <tr>
             <tr>
                 <td>
                     <label for="formula">Formula:</label>
+                </td>
+                <td>
                     <input type="text" name="formula" id="forCon" required>
                 </td>
             </tr>
             <tr>
                 <td>
                     <label for="estado">Estado:</label>
+                </td>
+                <td>
                     <input type="text" name="estado" id="estCon" required>
                 </td>
             </tr>
         <tr>
             <td>
                 <label for="idPas">Identificacion pasiente:</label>
+            </td>
+            <td>
                 <input type="number" name="idPas" id="idPas" required>
             </td>
         <tr>
-            <td>
+            <td >
                 <label for="idMed">Identificacion medico</label> 
-                <input type="number" name="idMed" id="idMed" required>
+            </td>
+            <td>
+                <input type="text" name="idMed" id="idMed" required>
             </td>
         </tr>
         <tr>
-            <td>
-                <input type="submit"  class="btn2" name="ingresar"value="ingresar">
-                <input type="submit"  class="btn2" name="actualizar"value="actualizar">
-                <input type="submit"  class="btn2" name="eliminar"value="eliminar">
+            <td colspan="2">
+                <input id="boton" type="submit"  class="btn2" name="ingresar"value="ingresar">
+                <input id="boton" type="submit"  class="btn2" name="actualizar"value="actualizar">
+                <input id="boton" type="submit"  class="btn2" name="eliminar"value="eliminar">
             </td>
         </tr>
 
     </table>
+    </div>
 
 </form>

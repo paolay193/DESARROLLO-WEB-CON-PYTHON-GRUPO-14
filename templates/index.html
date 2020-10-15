@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form action="/login" method="POST">
+    <div id="inicio">
+    <table>
+        <h3 id="titulo">Inicio de sesion<h3>
+        <tr>
+            <td>
+                <label for="nomUs">Nombre:</label>
+            </td>
+            <td>
+                <input type="text" name="nomUsu" id="nomUsu" placeholder="Ingresar Usuario" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="conUs">Contraseña:</label>
+            </td>
+            <td>
+                <input type="password" name="pasUsu" id="pasUsu" placeholder="Ingresar contraseña" required>
+            </td>
+        </tr>
+            <td colpas="2">
+                <input id="boton" type="submit" class="btn3"  name="registrar" value="registrar">
+                <input id="boton" type="button" class="btn3" name="ingresar" value="ingresar">
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

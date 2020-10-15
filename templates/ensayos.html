@@ -1,0 +1,67 @@
+
+<!--@app.route('/')
+def inicio():
+    inic = mysql.connection.cursor()
+    inic.execute("select cod_usu, nom_usu, pas_usu, rol_usu from Usuario")
+    usuario = inic.fetchall()
+    mysql.connection.commit()
+    return render_template("index.html", usuarios=usuario)
+
+@app.route("/inicio_agregar", method=["POST"])
+def inicio_agregar():
+    if request.form == "POST":
+        codigo = request.form["codUsu"]
+        nombre = request.form["nomUsu"]
+        contraseña = request.form["pasUsu"]
+        perfil = request.form["rolUsu"]
+        inic = mysql.connection.cursor()
+        inic.execute(""" Insert Into Usuario
+        (cod_lib,nom_usu,pas_usu,rol_usu) 
+        values(%s,%s,%s,%s)""",(codigo,nombre,contraseña,perfil,))
+        mysql.connect.commit()
+        return redirect(url_for("inicio"))
+
+@app.route("/menu")
+def menu():
+    if request.method=="POST":
+        return "hola"
+
+
+
+@app.route("/validarLogin")
+def validarLogin():
+
+@app.route("/", methods=["POST"])
+def login():
+    if request.method=="POST":
+        usuario = request.form("nomUsu")
+        contraseña = request.form("pasUsu")
+        conn = mysql.connection.cursor()
+        conn.execute("""select cod_usu,nom_usu,pas_usu,rol_usu from Usuario 
+        where nom_usu=%s and pas_usu=%s""",(usuario,contraseña))
+        usu = conn.fetchone()
+        mysql.connect.commit()
+        if usu != None:
+            return redirect(url_for("laboratorio", usus=usu)) 
+        return render_template("index.html")
+
+
+@app.route("/laboratorio", method=["POST"])
+def laboratorio():
+    if request.method=="POST":
+        codigo = request.form("codigo")
+        codigoConsulta = request.form("codig")
+        examenLaboratorio = request.form("examen")
+        conn = mysql.connection.cursor()
+        conn.execute("""select cod_lab,cod_cos_lib,exa_lab from Usuario )
+        values(%s,%s,%s)
+        mysql.connect.comit()
+        return render_template("laboratorio.html")
+       
+
+        
+        conn = mysql.connection.cursor()
+        conn.execute(""" inser into Medico(id_med,nom_med,ape_med,esp_med,tel_med,cor_med,dir_med)
+        values(%s,%s,%s,%s,%s,%s,%s)""",(iden_med,nombre_med,apellido_med,telefono_med,correo_med,especialidad_med,direccion_med))
+        mysql.connection.commit()
+        return render_template("f_medico.html")
