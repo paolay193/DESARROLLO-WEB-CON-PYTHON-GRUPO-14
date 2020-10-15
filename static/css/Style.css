@@ -6,9 +6,24 @@ h3{
     text-align: center;
     
 }
+
+#pie{
+    height:100px;
+    background: rgb(150, 40, 40);
+    text-align: center;
+    font:30px;
+    font-family:cursive;
+    color:#ffffff;
+
+}
 #cuerpo{
-    background: violet;
-    
+    height:100px;
+    background: rgb(150, 40, 40);
+    text-align: center;
+    font:30px;
+    font-family:cursive;
+    color:#ffffff;
+
 }
 
 #consulta{
@@ -17,7 +32,7 @@ h3{
     position: fixed;
     right:40%;
     top:20%;
-    border: 3px solid #793030;
+    border: 3px solid #111111;
     text-align:center;
 }
 #titulo{
@@ -32,7 +47,7 @@ h3{
     position: fixed;
     right:40%;
     top:20%;
-    border: 3px solid #793030;
+    border: 3px solid #111111;
     text-align:center;
 }
 #boton{
@@ -40,12 +55,12 @@ h3{
 }
 
 #medico{
-    width:380px;
-    height:320px;
+    width:400px;
+    height:420px;
     position: fixed;
-    right:40%;
-    top:20%;
-    border: 3px solid #793030;
+    right:50%;
+    top:30%;
+    border: 3px solid #111111;
     text-align:center;
 }
 .btn2{
@@ -65,7 +80,7 @@ h3{
 #paciente{
     position: fixed;
     right:40%;
-    top:20%;
+    top:10%;
     text-align:center;
 
 }
@@ -76,13 +91,31 @@ h3{
     position: fixed;
     right:40%;
     top:20%;
-    border: 3px solid #793030;
+    border: 3px solid #111111;
     text-align:center;
 }
 
 .btn3{
     float:right;
-
-#nav{
-    border:
 }
+
+
+.nav{
+    border:solid #9DF8FF 2px;
+    width: 250px;
+    background-color: #9DF8FF;
+    border-radius: 12px;
+   
+}
+.nav.hover{
+    transition: linear;
+    transition-duration: 300ms;
+    width: 150px;
+
+}
+.nav.li:hover{
+    background-color: aliceblue;
+    border:solid aliceblue 2px;
+}
+
+

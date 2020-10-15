@@ -50,7 +50,7 @@ def medico():
     medico = conn.fetchall()
     return render_template("f_medico.html", medicos = medico)
 
-@app.route("/ingrear_medico", methods=["POST"])
+@app.route("/ingresar_medico", methods=["POST"])
 def ingresar_medico():
     if request.method=="POST":
         iden_med = request.form["id_med"]
@@ -60,21 +60,43 @@ def ingresar_medico():
         telefono_med = request.form["tele_med"]
         correo_med = request.form["ema_med"]
         direccion_med = request.form["dir_med"]
-        usuario = request.form["nomUsu"]
-        contraseña = request.form["pasUsu"]
         conn = mysql.connection.cursor()
-        conn.execute("""insert into Medico(id_med,nom_med,ape_med,esp_med,tel_med,cor_med,dir_med)
-        values(%s,%s,%s,%s,%s,%s,%s)""",(iden_med,nombre_med,apellido_med,especialidad_med,telefono_med,correo_med,direccion_med))
+        conn.execute("""insert into Medico(id_med,nom_med,ape_med,esp_med,tel_med,cor_med,dir_med) values(%s,%s,%s,%s,%s,%s,%s)""",(iden_med,nombre_med,apellido_med,especialidad_med,telefono_med,correo_med,direccion_med))
         mysql.connection.commit()
-        conn 
         return redirect(url_for("medico"))
 
-
-
-
+@app.route("/ingresar_paciente", methods=["POST"])
+def ingresar_paciente():
+    if request.method=="POST":
+        iden_pac = request.form["idPac"]
+        nombre_pac = request.form["namPac"]
+        apellido_pac = request.form["apellido"]
+        tel_pac = request.form["telefono"]
+        correo_pac = request.form["email"]
+        direccion_pac = request.form["direccion"]
+        rh_pac = request.form["grupoRh"]
+        eps_pac = request.form["eps"]
+        fam_pac = request.form["famlPac"]
+        par_pac = request.form["parentesco"]
+        id_med_pac = request.form["id_med_pac"]
+        conn = mysql.connection.cursor()
+        conn.execute("""insert into Medico(id_med,nom_med,ape_med,esp_med,tel_med,cor_med,dir_med,id_med_pac)
+        values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+        """,(iden_pac,nombre_pac,apellido_pac,tel_pac,correo_pac,direccion_pac,rh_pac,eps_pac,fam_pac,par_pac,id_med_pac))
+        mysql.connection.commit()
+        return redirect(url_for("inicio"))
+        
 @app.route("/administrador")
 def administardor():
     return render_template("administrador.html")
+
+@app.route("/encabezado")
+def encabezado():
+    return render_template("encabezado.html")
+
+@app.route("/footer")
+def footer():
+    return render_template("footer.html")
 
 @app.route("/laboratorio")
 def laboratorio():
@@ -91,14 +113,6 @@ def remision():
 @app.route("/paciente")
 def paciente():
     return render_template("f_paciente.html")
-
- 
-    
-  
-
-
-
-
 
 
 if __name__ == "__main__":

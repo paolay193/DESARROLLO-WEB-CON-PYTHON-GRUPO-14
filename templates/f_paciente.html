@@ -1,6 +1,12 @@
 <link rel="Stylesheet" href="/static/css/Style.css">
+<div id="cuerpo">
+    <header id="encabezado">
+        <h1>CLINICA COLOMBIA<H1>
+    <header>
+    </div>
 
 <form action ="/paciente" method="POST">
+
     <div id="paciente">
     <table>
         <h3 id="titulo">Paciente:<h2>
@@ -17,7 +23,7 @@
                 <label for="name">Nombre:</label>
             </td>
             <td>
-                <input type="text" name="name" id="namePac" required>
+                <input type="text" name="namPac" id="namePac" required>
             </td>
         </tr>
         <tr>
@@ -55,7 +61,7 @@
                 <label for="grupo rh">grupo Rh:</label>
             </td>
             <td>
-                <input type="text" name="grupo rh" id="rhPac" required>
+                <input type="text" name="grupoRh" id="rhPac" required>
             </td>
         </tr>
         <tr>
@@ -81,10 +87,18 @@
             </td>
         </tr>
         <tr>
-            <td colpas="2">
-                <input type="submit"  class="btn2" name="ingresar"value="ingresar">
-                <input type="submit"  class="btn2" name="actualizar"value="actualizar">
-                <input type="submit"  class="btn2" name="eliminar"value="eliminar">
+            <td>
+                <label for="parentesco">Id medico:</label>
+            </td>
+            <td>
+                <input type="text" name="id_med_pac" id="idMedPac" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input id="boton" type="submit" class="btn2" name="ingresar"value="ingresar">
+                <input id="boton" type="submit"  class="btn2" name="actualizar" value="actualizar">
+                <input id="boton" type="submit"  class="btn2" name="eliminar" value="eliminar">
             </td>
         </tr>
 
