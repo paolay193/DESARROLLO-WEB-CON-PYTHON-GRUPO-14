@@ -1,11 +1,5 @@
-<link rel="Stylesheet" href="/static/css/Style.css">
-<div id="cuerpo">
-    <header id="encabezado">
-        <h1>CLINICA COLOMBIA<H1>
-    <header>
-    </div>
 
-<form action ="/ingresar_paciente" method="POST">
+<form action ="/ingresar_paciente", method="POST">
 
     <div id="paciente">
     <table>
@@ -15,7 +9,7 @@
                 <label for="id">Identifiacion:</label>
             </td>
             <td>
-                <input type="number" name="id" id="idPac" required>
+                <input type="number" name="id_pac" id="idPac" required>
             </td>
         </tr>
         <tr>
@@ -23,7 +17,7 @@
                 <label for="name">Nombre:</label>
             </td>
             <td>
-                <input type="text" name="namPac" id="namePac" required>
+                <input type="text" name="nam_pac" id="namePac" required>
             </td>
         </tr>
         <tr>
@@ -31,7 +25,7 @@
                 <label for="apellido">Apellido:</label>
             </td>
             <td>
-                <input type="text" name="apellido" id="apelPac" required>
+                <input type="text" name="ape_pac" id="apelPac" required>
             </td>
         </tr>
         <tr>
@@ -39,29 +33,29 @@
                 <label for="telefono">Telefono:</label>
             </td>
             <td>
-                <input type="number" name="telefono" id="telPac" required>
+                <input type="number" name="tel_pac" id="telPac" required>
             </td>
         <tr>
             <td>
                 <label for="email">Correo:</label>
             </td>
             <td>
-                <input type="email" name="email" id="emaiPac" required>
+                <input type="email" name="ema_pac" id="emaiPac" required>
             </td>
         <tr>
             <td>
                 <label for="direccion">Direccion:</label>
             </td>
             <td>
-                <input type="text" name="direccion" id="direcPac" required>
+                <input type="text" name="dir_pac" id="direcPac" required>
             </td>
         </tr>
         <tr>
             <td>
-                <label for="grupo rh">grupo Rh:</label>
+                <label for="grupo rh">Grupo Rh:</label>
             </td>
             <td>
-                <input type="text" name="grupoRh" id="rhPac" required>
+                <input type="text" name="rh_pac" id="rhPac" required>
             </td>
         </tr>
         <tr>
@@ -69,21 +63,21 @@
                 <label for="eps">EPS:</label>
             </td>
             <td>
-                <input type="text" name="eps" id="epsPac" required>
+                <input type="text" name="eps_pac" id="epsPac" required>
             </td>
         <tr>
             <td>
                 <label for="famlPac">Familiar Paciente:</label>
             </td>
             <td>
-                <input type="text" name="famlPac" id="famlPac" required>
+                <input type="text" name="fam_pac" id="famlPac">
             </td>
         <tr>
             <td>
                 <label for="parentesco">Parentesco:</label>
             </td>
             <td>
-                <input type="text" name="parentesco" id="parPac" required>
+                <input type="text" name="par_pac" id="parPac">
             </td>
         </tr>
         <tr>
@@ -97,11 +91,10 @@
         <tr>
             <td>
                 <input id="boton" type="submit" class="btn2" name="ingresar"value="ingresar">
-                <input id="boton" type="submit"  class="btn2" name="actualizar" value="actualizar">
-                <input id="boton" type="submit"  class="btn2" name="eliminar" value="eliminar">
+                <input id="boton" type="button"  class="btn2" name="actualizar" value="actualizar">
+                <input id="boton" type="button"  class="btn2" name="eliminar" value="eliminar">
             </td>
         </tr>
-
     </table>
     </div>
 </form>

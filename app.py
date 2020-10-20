@@ -60,8 +60,14 @@ def ingresar_medico():
         telefono_med = request.form["tele_med"]
         correo_med = request.form["ema_med"]
         direccion_med = request.form["dir_med"]
+        usuario_med = request.form["us_med"]
+        contarseña_med = request.form["pas_med"]
         conn = mysql.connection.cursor()
         conn.execute("""insert into Medico(id_med,nom_med,ape_med,esp_med,tel_med,cor_med,dir_med) values(%s,%s,%s,%s,%s,%s,%s)""",(iden_med,nombre_med,apellido_med,especialidad_med,telefono_med,correo_med,direccion_med))
+        mysql.connection.commit()
+        coon = mysql.connection.cursor()
+        coon.execute("""insert into Usuario (cod_usu,nom_usu,pas_usu,rol_usu)
+        values(%s,%s,%s,%s)""",(iden_med,usuario_med,contarseña_med,2))
         mysql.connection.commit()
         return redirect(url_for("medico"))
 
@@ -75,23 +81,24 @@ def paciente():
 @app.route("/ingresar_paciente", methods=["POST"])
 def ingresar_paciente():
     if request.method=="POST":
-        iden_pac = request.form["idPac"]
-        nombre_pac = request.form["namPac"]
-        apellido_pac = request.form["apellido"]
-        tel_pac = request.form["telefono"]
-        correo_pac = request.form["email"]
-        direccion_pac = request.form["direccion"]
-        rh_pac = request.form["grupoRh"]
-        eps_pac = request.form["eps"]
-        fam_pac = request.form["famlPac"]
-        par_pac = request.form["parentesco"]
+        id_pac = request.form["id_pac"]
+        nom_pac = request.form["nam_pac"]
+        ape_pac = request.form["ape_pac"]
+        tel_pac = request.form["tel_pac"]
+        corr_pac = request.form["ema_pac"]
+        dir_pac = request.form["dir_pac"]
+        rh_pac = request.form["rh_pac"]
+        eps_pac = request.form["eps_pac"]
+        fam_pac = request.form["fam_pac"]
+        par_pac = request.form["par_pac"]
         id_med_pac = request.form["id_med_pac"]
         conn = mysql.connection.cursor()
-        conn.execute("""insert into Medico(id_pac,nom_pac,ape_pac,tel_pac,cor_pac,dir_pac,rh_pac,eps_pac,fam_pac,par_pac,id_med_pac)
-        values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
-        """,(iden_pac,nombre_pac,apellido_pac,tel_pac,correo_pac,direccion_pac,rh_pac,eps_pac,fam_pac,par_pac,id_med_pac))
+        conn.execute("""insert into Paciente
+        (id_pac,nom_pac,ape_pac,tel_pac,cor_pac,dir_pac,rh_pac,eps_pac,fam_pac,par_pac,id_med_pac)
+        values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+        """,(id_pac,nom_pac,ape_pac,tel_pac,corr_pac,dir_pac,rh_pac,eps_pac,fam_pac,par_pac,id_med_pac))
         mysql.connection.commit()
-        return redirect(url_for("inicio"))
+        return redirect(url_for("paciente"))
         
 @app.route("/administrador")
 def administardor():
