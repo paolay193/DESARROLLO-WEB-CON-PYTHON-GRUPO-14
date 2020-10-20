@@ -7,13 +7,12 @@
     <link rel="Stylesheet" href="/static/css/Style.css">
 </head>
 <body>
+    {% block encabezado%}
+    {% endblock %}
    
-{% block body %}
-{% endblock %}
-{% block contenido %}
-{% endblock %}
-{% block encabezado%}
-{% endblock %}
-{% block footer%}
-{% endblock %}
+    {% block body %}
+    {% endblock %}
+    {% block contenido %}
+    {% endblock %}
+</body>
 </html>

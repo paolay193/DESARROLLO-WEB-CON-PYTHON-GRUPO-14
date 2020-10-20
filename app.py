@@ -100,6 +100,23 @@ def ingresar_paciente():
         mysql.connection.commit()
         return redirect(url_for("paciente"))
         
+
+@app.route("/laboratorio")
+def laboratorio():
+    conn = mysql.connection.cursor()
+    conn.execute("select * from laboratorio")
+    mysql.connection.commit()
+    return render_template("f_laboratorio.html",laboratoros=laboratorio)
+    
+
+@app.route("/consulta")
+def consulta():
+    return render_template("f_consulta.html")
+
+@app.route("/remision")
+def remision():
+    return render_template("f_Remision.html")
+
 @app.route("/administrador")
 def administardor():
     return render_template("administrador.html")
@@ -111,21 +128,6 @@ def encabezado():
 @app.route("/footer")
 def footer():
     return render_template("footer.html")
-
-@app.route("/laboratorio")
-def laboratorio():
-    return render_template("f_laboratorio.html")
-
-@app.route("/consulta")
-def consulta():
-    return render_template("f_consulta.html")
-
-@app.route("/remision")
-def remision():
-    return render_template("f_Remision.html")
-
-
-
 
 if __name__ == "__main__":
    app.run(debug=True, port=3000)

@@ -1,6 +1,6 @@
-
-<form action ="/ingresar_medico", method="POST">
-    <div id="medico">
+{% extends 'base.html' %}
+{% block body %}
+<form id="medico" action ="/ingresar_medico", method="POST">
     <table>
         <h3 id="titulo">Medico<h3>
         <tr>
@@ -8,7 +8,7 @@
                 <label for="id">Identificacion:</label>
             </td>
             <td>
-                <input type="text" name="id_med" id="idMed" required>
+                <input type="text" name="id_med" id="idMed" class="medico2" required>
             </td>
         </tr>
         <tr>
@@ -16,7 +16,7 @@
                 <label for="name">Nombre:</label>
             </td>
             <td>
-                <input type="text" name="name_med" id="nameMed" required>
+                <input type="text" name="name_med" id="nameMed" class="medico2" required>
             </td>
         </tr>
         <tr>
@@ -24,7 +24,7 @@
                 <label for="apellido">Apellido:</label>
             </td>
             <td>
-                <input type="text" name="apel_med" id="apelMed" required>
+                <input type="text" name="apel_med" id="apelMed" class="medico2" required>
             </td>
         </tr>
         <tr>
@@ -32,7 +32,7 @@
                 <label for="telefono">Telefono:</label>
             </td>
             <td>
-                <input type="number" name="tele_med" id="telMed" required>
+                <input type="number" name="tele_med" id="telMed" class="medico2" required>
             </td>
         </tr>
         <tr>
@@ -40,7 +40,7 @@
                 <label for="email">Correo:</label>
             </td>
             <td>
-                <input type="text" name="ema_med" id="emlMed" required> 
+                <input type="text" name="ema_med" id="emlMed" class="medico2" required> 
             </td>
         </tr>
         <tr>
@@ -48,7 +48,7 @@
                 <label for="especialidad">Especialidad</label>
             </td>
             <td>
-            <select name="esp_med" id="espe_med">
+            <select name="esp_med" id="espe_med" class="medico2">
                     <option value="1">Cirujano</option>
                     <option value="2">Ortopedista</option>
                 </select>
@@ -59,7 +59,7 @@
                 <label for="direccion">Direccion</label>
             </td>
             <td>
-                <input type="text" name="dir_med" id="dirMed" required>
+                <input type="text" name="dir_med" id="dirMed" class="medico2" required>
             </td>
         </tr>
         <tr>
@@ -67,7 +67,7 @@
                 <label for="usu2">Usuario</label>
             </td>
             <td>
-                <input type="text" name="us_med" id="us_med">
+                <input type="text" name="us_med" id="us_med" class="medico2">
             </td>
         </tr>    
         <tr>
@@ -75,10 +75,9 @@
                 <label for="pas_med">Contraseña</label>
             </td>
             <td>
-                <input type="password" name="pas_med" id="pas_Med">
+                <input type="password" name="pas_med" id="pas_Med" class="medico2">
             </td>
         </tr>
-
         <tr>
             <td colspan="2">
                 <input type="submit"  class="btn2" name="ingresar"value="ingresar">
@@ -88,6 +87,7 @@
         </tr>
     </table>
 </form>
+{% endblock %}
 
     
         

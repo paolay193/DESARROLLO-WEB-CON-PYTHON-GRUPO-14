@@ -1,7 +1,8 @@
-
-<form action ="/ingresar_paciente", method="POST">
-
-    <div id="paciente">
+{% extends 'base.html' %}
+{%block body%}
+{% block encabezado%}
+{% endblock %}
+<form id="paciente" action ="/ingresar_paciente", method="POST">
     <table>
         <h3 id="titulo">Paciente:<h2>
         <tr>
@@ -9,7 +10,7 @@
                 <label for="id">Identifiacion:</label>
             </td>
             <td>
-                <input type="number" name="id_pac" id="idPac" required>
+                <input type="number" name="id_pac" id="idPac" class="paciente2" required>
             </td>
         </tr>
         <tr>
@@ -17,7 +18,7 @@
                 <label for="name">Nombre:</label>
             </td>
             <td>
-                <input type="text" name="nam_pac" id="namePac" required>
+                <input type="text" name="nam_pac" id="namePac" class="paciente2" required>
             </td>
         </tr>
         <tr>
@@ -25,7 +26,7 @@
                 <label for="apellido">Apellido:</label>
             </td>
             <td>
-                <input type="text" name="ape_pac" id="apelPac" required>
+                <input type="text" name="ape_pac" id="apelPac" class="paciente2" required>
             </td>
         </tr>
         <tr>
@@ -33,21 +34,21 @@
                 <label for="telefono">Telefono:</label>
             </td>
             <td>
-                <input type="number" name="tel_pac" id="telPac" required>
+                <input type="number" name="tel_pac" id="telPac" class="paciente2" required>
             </td>
         <tr>
             <td>
                 <label for="email">Correo:</label>
             </td>
             <td>
-                <input type="email" name="ema_pac" id="emaiPac" required>
+                <input type="email" name="ema_pac" id="emaiPac" class="paciente2" required>
             </td>
         <tr>
             <td>
                 <label for="direccion">Direccion:</label>
             </td>
             <td>
-                <input type="text" name="dir_pac" id="direcPac" required>
+                <input type="text" name="dir_pac" id="direcPac" class="paciente2" required>
             </td>
         </tr>
         <tr>
@@ -55,7 +56,7 @@
                 <label for="grupo rh">Grupo Rh:</label>
             </td>
             <td>
-                <input type="text" name="rh_pac" id="rhPac" required>
+                <input type="text" name="rh_pac" id="rhPac" class="paciente2" required>
             </td>
         </tr>
         <tr>
@@ -63,21 +64,21 @@
                 <label for="eps">EPS:</label>
             </td>
             <td>
-                <input type="text" name="eps_pac" id="epsPac" required>
+                <input type="text" name="eps_pac" id="epsPac" class="paciente2" required>
             </td>
         <tr>
             <td>
                 <label for="famlPac">Familiar Paciente:</label>
             </td>
             <td>
-                <input type="text" name="fam_pac" id="famlPac">
+                <input type="text" name="fam_pac" id="famlPac" class="paciente2">
             </td>
         <tr>
             <td>
                 <label for="parentesco">Parentesco:</label>
             </td>
             <td>
-                <input type="text" name="par_pac" id="parPac">
+                <input type="text" name="par_pac" id="parPac" class="paciente2">
             </td>
         </tr>
         <tr>
@@ -85,16 +86,19 @@
                 <label for="parentesco">Id medico:</label>
             </td>
             <td>
-                <input type="text" name="id_med_pac" id="idMedPac" required>
+                <input type="text" name="id_med_pac" id="idMedPac" class="paciente2" required>
             </td>
         </tr>
         <tr>
-            <td>
-                <input id="boton" type="submit" class="btn2" name="ingresar"value="ingresar">
-                <input id="boton" type="button"  class="btn2" name="actualizar" value="actualizar">
-                <input id="boton" type="button"  class="btn2" name="eliminar" value="eliminar">
+            <td colspan="2">
+                <input id="boton1" type="submit" class="btn2" name="ingresar"value="ingresar">
+                <input id="boton2" type="button"  class="btn2" name="actualizar" value="actualizar">
+                <input id="boton3" type="button"  class="btn2" name="eliminar" value="eliminar">
             </td>
         </tr>
     </table>
-    </div>
 </form>
+<div>
+    {% include 'footer.html' %}
+</div>
+{% endblock %}

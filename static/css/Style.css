@@ -54,18 +54,6 @@ h3{
     float:right;
 }
 
-#medico{
-    width:400px;
-    height:420px;
-    position: fixed;
-    right:50%;
-    top:30%;
-    border: 3px solid #111111;
-    text-align:center;
-}
-.btn2{
-    float:right;
-}
 
 #inicio{
     position: fixed;
@@ -73,17 +61,26 @@ h3{
     top:20%;
     text-align:center;
 }
-.boton{
-    float:right;
+.btn2{
+    width: 100px;
+    margin-left: 5px;
+    background-color: #9DF8FF;
+    border-radius: 30px;
 }
 
-#paciente{
+#paciente, #medico{
     background: #dbd3d3;
     position: fixed;
     right:40%;
     top:20%;
-    text-align:center;
-
+    text-align:left;
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+.paciente2, .medico2{
+    width: 200px;
+    background-color: #9DF8FF;
+    margin-right: 30px;
 }
 
 #remision{
@@ -95,11 +92,6 @@ h3{
     border: 3px solid #111111;
     text-align:center;
 }
-
-.btn3{
-    float:right;
-}
-
 
 .nav{
     border:solid #9DF8FF 2px;
