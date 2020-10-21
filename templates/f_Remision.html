@@ -1,11 +1,5 @@
-<link rel="Stylesheet" href="/static/css/Style.css">
-<from action="/remision"> 
-    <div id="cuerpo">
-        <header id="encabezado">
-            <h1>CLINICA COLOMBIA<H1>
-        <header>
-        </div>
-    <div id="remision">
+
+<from action="/remision", method="POST"> 
     <table>
         <h3>Remision<h3> 
         <tr>
@@ -13,9 +7,8 @@
                 <label for="codigo">Codigo Consulta:</label>
             </td>
             <td>
-                <input type="number" name="codigo" id="codCon" required>
-            </td>
-                
+                <input type="number" name="cod_con" id="codCon" required>
+            </td>     
         </tr>
         <tr> 
             <td> 

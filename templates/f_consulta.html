@@ -1,19 +1,16 @@
-<link rel="Stylesheet" href="/static/css/Style.css">
-<form action="/consulta", method="POST">
-    <div id="cuerpo">
-        <header id="encabezado">
-            <h1>CLINICA COLOMBIA<H1>
-        <header>
-        </div>
-    <div id="consulta">
+{% block encabezado %}
+{% endblock %}
+{% include 'base.html' %}
+{% block body %}
+<form id="consulta" action="/ingresar_consulta", method="POST">
     <table>
         <h3 id="titulo">consulta<h3>
         <tr>
-            <td>
-                <label for="codigo">Codigo:</label>
+           <td>
+                <label for="codCons">Codigo:</label>
             </td>
             <td>
-                <input type="number" name="codigo" id="codCon" required>
+                <input type="date" name="fechconsulta" id="fechCon" required>
             </td>
         </tr>
         <tr>
@@ -29,7 +26,7 @@
                 <label for="hora">Hora:</label>
             </td>
             <td>
-                <input type="time" name="hora" id="hora" required>
+                <input type="time" name="hora" id="horaCon" required>
             </td>
         </tr>
         <tr>
@@ -42,7 +39,7 @@
         </tr>
         <tr>
             <td>
-                <label for="observacion">observacion:</label>
+                <label for="observacion">Observacion:</label>
             </td>
             <td>
                 <input type="text" name="observacion" id="obseCon" required>
@@ -81,13 +78,12 @@
         </tr>
         <tr>
             <td colspan="2">
-                <input id="boton" type="submit"  class="btn2" name="ingresar"value="ingresar">
-                <input id="boton" type="button"  class="btn2" name="actualizar"value="actualizar">
-                <input id="boton" type="button"  class="btn2" name="eliminar"value="eliminar">
+                <input type="submit"  class="btn2" name="ingresar"value="Ingresar">
+                <input type="button"  class="btn2" name="actualizar"value="Actualizar">
+                <input type="button"  class="btn2" name="eliminar"value="Eliminar">
             </td>
         </tr>
-
     </table>
-    </div>
-
 </form>
+
+{% endblock %}

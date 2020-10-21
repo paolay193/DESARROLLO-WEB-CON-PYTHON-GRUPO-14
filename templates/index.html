@@ -1,12 +1,6 @@
 {% extends "base.html" %}
-
 {% block body %}
-<div id="cuerpo">
-    <header id="encabezado">
-        <h1>CLINICA COLOMBIA<H1>
-    <header>
-    </div>
-<form action="/login" method="POST">
+<form id="inicio" action="/login" method="POST">
     <div id="inicio">
     <table>
         <h3 id="titulo">Inicio de sesion<h3>
@@ -27,11 +21,10 @@
             </td>
         </tr>
             <td colpas="2">
-                <input id="boton" type="submit" class="btn3"  name="registrar" value="registrar">
-                <input id="boton" type="button" class="btn3" name="ingresar" value="ingresar">
+                <button type="submit" class="btn2" name="ingresar">Ingresar</button>
+                <button type="submit" class="btn2" name="registrar">Registrar</button>
             </td>
         </tr>
     </table>
 </form>
-
 {% endblock %}

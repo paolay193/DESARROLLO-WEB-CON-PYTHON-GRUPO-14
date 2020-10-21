@@ -1,5 +1,6 @@
-from flask import Flask,request,redirect,url_for,render_template
+from flask import Flask,flash,request,redirect,url_for,render_template
 from flask_mysqldb import MySQL
+
 
 app = Flask(__name__) 
 
@@ -8,6 +9,8 @@ app.config["MYSQL_USER"]= "root"
 app.config["MYSQL_PASSWORD"]= "1234"
 app.config["MYSQL_DB"]= "historia_clinica"
 mysql= MySQL(app)
+
+app.secret_key="4321"
 
 @app.route('/')
 def inicio():
@@ -18,7 +21,7 @@ def primer_usuario():
     conn = mysql.connection.cursor()
     conn.execute("select * from usuario where rol_usu={}".format(1))
     user = conn.fetchone()
-    if user ==None:
+    if user == None:
         conn.execute(" insert into usuario values(%s,%s,%s,%s)",(111111,"Paola","4321",1))
     mysql.connection.commit()
       
@@ -69,7 +72,10 @@ def ingresar_medico():
         coon.execute("""insert into Usuario (cod_usu,nom_usu,pas_usu,rol_usu)
         values(%s,%s,%s,%s)""",(iden_med,usuario_med,contarseña_med,2))
         mysql.connection.commit()
+        flash("Medico ingresado correctamente")
         return redirect(url_for("medico"))
+    else:
+        return "Usuario no creado"
 
 @app.route("/paciente")
 def paciente():
@@ -111,7 +117,31 @@ def laboratorio():
 
 @app.route("/consulta")
 def consulta():
-    return render_template("f_consulta.html")
+    conn = mysql.connection.cursor()
+    conn.execute("select * from consulta")
+    mysql.connection.commit()
+    return render_template("f_consulta.html", consultas = consulta)
+
+@app.route("/ingresar_consulta")
+def ingresar_consulta():
+    if request.methods=="POST":
+        codCon = request.form["fechconsulta"]
+        fecCon = request.form["fechconsulta"]
+        horCon = request.form["fechconsulta"]
+        sintCon = request.form["fechconsulta"]
+        obsCon = request.form["fechconsulta"]
+        formCon = request.form["fechconsulta"]
+        estCon = request.form["fechconsulta"]
+        idPacCon = request.form["fechconsulta"]
+        idMedCon = request.form["fechconsulta"]
+        conn = mysql.connection.cursor()
+        conn.execute("""insert into Consulta
+        (cod_cons,fec_cons,hora_cons,sint_cons,obse_cons,form_cons,esta_cons,id_pac_cons,id_med_cons) 
+        values(%s,%s,%s,%s,%s,%s,%s,%s,%s)
+        """,(codCon,fecCon,horCon,sintCon,obsCon,formCon,estCon,idPacCon,idMedCon))
+        mysql.connection.commit()
+        return redirect(url_for("consulta"))
+
 
 @app.route("/remision")
 def remision():
