@@ -1,30 +1,30 @@
 {% extends "base.html" %}
 {% block body %}
-<form id="inicio" action="/login" method="POST">
-    <div id="inicio">
-    <table>
-        <h3 id="titulo">Inicio de sesion<h3>
-        <tr>
-            <td>
-                <label for="nomUs">Nombre:</label>
-            </td>
-            <td>
-                <input type="text" name="nomUsu" id="nomUsu" placeholder="Ingresar Usuario" required>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="conUs">Contraseña:</label>
-            </td>
-            <td>
-                <input type="password" name="pasUsu" id="pasUsu" placeholder="Ingresar contraseña" required>
-            </td>
-        </tr>
-            <td colpas="2">
-                <button type="submit" class="btn2" name="ingresar">Ingresar</button>
-                <button type="submit" class="btn2" name="registrar">Registrar</button>
-            </td>
-        </tr>
-    </table>
-</form>
+<button data-mod-target="#mod" id="usuarioI" class="btn" type="button" name="iniciar">Iniciar sesion</button>
+
+<div class="mod" id="mod">
+    <div class="mod-header">
+        <div class="title">INICIO DE SESION</div>
+        <button data-close-button class="close-button">&times;</button>
+    </div>
+    <div class="mod-body">
+        <form id="inicio" action="/login" method="POST">
+            <table>
+                <tr>
+                    <td><label for="nomUs">Nombre:</label></td>
+                    <td><input type="text" name="nomUsu" id="nomUsu" placeholder="Ingresar Usuario" required></td>
+                </tr>
+                <tr>
+                    <td><label for="conUs">Contraseña:</label></td>
+                    <td><input type="password" name="pasUsu" id="pasUsu" placeholder="Ingresar contraseña" required></td>
+                </tr>
+                    <td><input type="submit" class="btnIni" name="ingresar"value="Ingresar"></td>
+                    <td><input type="submit" class="btnIni" name="registrar" value="Registrar"></td>
+                    <td><input type="button" class="btnIni" name="salir" value="Salir" data-close-button="" ></td>
+                </tr>
+            </table>
+        </form>   
+    </div>
+</div>
+<div id="overlay"></div>
 {% endblock %}

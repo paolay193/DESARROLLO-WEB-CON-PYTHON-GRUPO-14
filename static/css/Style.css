@@ -7,14 +7,62 @@ h3{
     text-align: center; 
 }
 
-#pie{
-    height:100px;
-    background: rgb(40, 91, 150);
-    text-align: center;
-    font:30px;
-    font-family:cursive;
-    color:#ffffff;
+/* Todo sobre inicio de secion */
+
+.mod{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 300ms ease-in-out;
+    border: 1px solid rgb(1, 68, 73);
+    z-index: 10;
+    background-color: #9DF8FF;
+    width: 350px;
+    max-width: 35%;
 }
+.mod.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.mod-header{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mod-header .close-button{
+    cursor: grab;
+    border: none;
+    outline:none;
+    background:none ;
+    color: rgb(1, 68, 73);
+    font-size: 25px;
+    font-weight: bold;
+}
+#overlay{
+    position: fixed;
+    opacity: 0;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(1, 68, 73,0.5);
+    pointer-events: none;
+}
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+.btnIni{
+    padding-left: 10px;
+    width: 80px;
+    border: 1px solid rgba(1, 68, 73,0.5);
+    background-color:#9DF8FF;
+}
+
+/* hasta aqui inicio de secion */
 
 #cuerpo{
     height:100px;
@@ -106,4 +154,11 @@ h3{
     border:solid aliceblue 2px;
 }
 
-
+#pie{
+    height:100px;
+    background: rgb(40, 91, 150);
+    text-align: center;
+    font:30px;
+    font-family:cursive;
+    color:#ffffff;
+}
