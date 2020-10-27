@@ -1,8 +1,13 @@
-{% extends 'base.html' %}
+{% include 'encabezado.html'%}
+{%block encabezado%}
+<div>
+
+</div>
+{%endblock%}
+{% include 'base.html' %}
 {%block body%}
-{% block encabezado%}
-{% endblock %}
-<form id="paciente" action ="/ingresar_paciente", method="POST">
+<body>
+<form class="formularios" id="paciente" action ="/ingresar_paciente", method="POST">
     <table>
         <h3 id="titulo">Paciente:<h2>
         <tr>
@@ -98,7 +103,6 @@
         </tr>
     </table>
 </form>
-<div>
-    {% include 'footer.html' %}
-</div>
+</body>
 {% endblock %}
+

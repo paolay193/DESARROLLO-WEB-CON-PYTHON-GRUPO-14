@@ -1,89 +1,95 @@
-{% block encabezado %}
-{% endblock %}
+{% include 'encabezado.html'%}
+{%block encabezado%}
+<div>
+
+</div>
+{%endblock%}
+
 {% include 'base.html' %}
 {% block body %}
-<form id="consulta" action="/ingresar_consulta", method="POST">
-    <table>
-        <h3 id="titulo">consulta<h3>
-        <tr>
-           <td>
-                <label for="codCons">Codigo:</label>
-            </td>
-            <td>
-                <input type="date" name="fechconsulta" id="fechCon" required>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="fechconsulta">Fecha Consulta:</label>
-            </td>
-            <td>
-                <input type="date" name="fechconsulta" id="fechCon" required>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="hora">Hora:</label>
-            </td>
-            <td>
-                <input type="time" name="hora" id="horaCon" required>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="sintpaciente">Sintomas Paciente:</label>
-            </td>
-            <td>
-                <input type="text" name="sintpaciente" id="sintPac" required>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="observacion">Observacion:</label>
-            </td>
-            <td>
-                <input type="text" name="observacion" id="obseCon" required>
-            </td>
-         <tr>
+<div>
+    <form class="formularios" id="consulta" action="/ingresar_consulta", method="POST">
+        <table>
+            <h3 id="titulo">consulta<h3>
             <tr>
-                <td>
-                    <label for="formula">Formula:</label>
+            <td>
+                    <label for="codCons">Codigo:</label>
                 </td>
                 <td>
-                    <input type="text" name="formula" id="forCon" required>
+                    <input type="text" name="codCons" id="fechCon" required>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="estado">Estado:</label>
+                    <label for="fechconsulta">Fecha Consulta:</label>
                 </td>
                 <td>
-                    <input type="text" name="estado" id="estCon" required>
+                    <input type="date" name="fecCons" id="fechCon" required>
                 </td>
             </tr>
-        <tr>
-            <td>
-                <label for="idPas">Identificacion pasiente:</label>
-            </td>
-            <td>
-                <input type="number" name="idPas" id="idPas" required>
-            </td>
-        <tr>
-            <td >
-                <label for="idMed">Identificacion medico</label> 
-            </td>
-            <td>
-                <input type="text" name="idMed" id="idMed" required>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input type="submit"  class="btn2" name="ingresar"value="Ingresar">
-                <input type="button"  class="btn2" name="actualizar"value="Actualizar">
-                <input type="button"  class="btn2" name="eliminar"value="Eliminar">
-            </td>
-        </tr>
-    </table>
-</form>
-
+            <tr>
+                <td>
+                    <label for="hora">Hora:</label>
+                </td>
+                <td>
+                    <input type="time" name="horCons" id="horCons" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="sintpaciente">Sintomas Paciente:</label>
+                </td>
+                <td>
+                    <input type="text" name="sintPacCons" id="sintPac" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="observacion">Observacion:</label>
+                </td>
+                <td>
+                    <input type="text" name="obsCons" id="obseCon" required>
+                </td>
+            <tr>
+                <tr>
+                    <td>
+                        <label for="formula">Formula:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="forCons" id="forCon" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="estado">Estado:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="estCons" id="estCon" required>
+                    </td>
+                </tr>
+            <tr>
+                <td>
+                    <label for="idPas">Identificacion paciente:</label>
+                </td>
+                <td>
+                    <input type="number" name="idPacCons" id="idPas" required>
+                </td>
+            <tr>
+                <td >
+                    <label for="idMed">Identificacion medico</label> 
+                </td>
+                <td>
+                    <input type="text" name="idMedCons" id="idMed" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit"  class="btn2" name="ingresar"value="Ingresar">
+                    <input type="button"  class="btn2" name="actualizar"value="Actualizar">
+                    <input type="button"  class="btn2" name="eliminar"value="Eliminar">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
 {% endblock %}

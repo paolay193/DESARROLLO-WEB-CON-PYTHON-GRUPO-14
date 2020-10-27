@@ -1,3 +1,6 @@
+*{
+    font-size: 17px;
+}
 #login{
 border: solid #9DF8FF 3px;
 text-align: center;
@@ -7,14 +10,74 @@ h3{
     text-align: center; 
 }
 
-/* Todo sobre inicio de secion */
+#cuerpo{
+    height:100px;
+    background: rgb(1, 68, 73);
+    text-align: center;
+    font-size:40px;
+    font-family:cursive;
+    color:#ffffff;
+}
+
+
+#titulo{
+    font-size:30px;
+    font-family: cursive;
+}
+
+#mod-body{
+    position: fixed;
+    right:40%;
+    top:35%;
+    text-align:center;
+}
+
+.btn2{
+    width: 100px;
+    margin-left: 5px;
+    background-color: #9DF8FF;
+    border-radius: 30px;
+}
+
+.formularios{
+    width:auto;
+    height: auto;
+    position: fixed;
+    right:40%;
+    top:20%;
+    text-align:left;
+    background-color: #98bace;
+    border: 3px solid #111111;
+}
+
+
+.paciente2, .medico2{
+    width: 200px;
+    background-color: #9DF8FF;
+    margin-right: 30px;
+}
+
+
+footer{
+    position: absolute;
+    bottom: 0%;
+    width: 99%;
+    background: rgb(40, 91, 150);
+    text-align: center;
+    font:30px;
+    font-family:cursive;
+    color:#ffffff;
+    
+}
+
+/* Todo sobre inicio de sesion */
 
 .mod{
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    transition: 300ms ease-in-out;
+    transition: 500ms ease-in-out;
     border: 1px solid rgb(1, 68, 73);
     z-index: 10;
     background-color: #9DF8FF;
@@ -48,7 +111,7 @@ h3{
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: rgba(1, 68, 73,0.5);
+    background-color: rgba(40, 91, 150, 0.2);
     pointer-events: none;
 }
 #overlay.active{
@@ -56,109 +119,13 @@ h3{
     pointer-events: all;
 }
 .btnIni{
-    padding-left: 10px;
     width: 80px;
-    border: 1px solid rgba(1, 68, 73,0.5);
-    background-color:#9DF8FF;
+    border: 1px solid rgb(1, 68, 73);
+    background-color:rgb(40, 91, 150);
+    
+}
+#usuarioI{
+    float: right;
 }
 
 /* hasta aqui inicio de secion */
-
-#cuerpo{
-    height:100px;
-    background: rgb(1, 68, 73);
-    text-align: center;
-    font:30px;
-    font-family:cursive;
-    color:#ffffff;
-}
-
-
-#titulo{
-    font-size:30px;
-    font-family: cursive;
-}
-
-#laboratorio{
-    width:380px;
-    height: 250px;
-    position: fixed;
-    right:40%;
-    top:20%;
-    border: 3px solid #111111;
-    text-align:center;
-}
-
-#boton{
-    float:right;
-}
-
-
-#inicio{
-    position: fixed;
-    right:40%;
-    top:20%;
-    text-align:center;
-}
-
-.btn2{
-    width: 100px;
-    margin-left: 5px;
-    background-color: #9DF8FF;
-    border-radius: 30px;
-}
-
-#paciente, #medico, #inicio, #consulta{
-    background: #98bace;
-    position: fixed;
-    right:40%;
-    top:20%;
-    text-align:left;
-    padding-left: 30px;
-    padding-bottom: 30px;
-    padding-right: 30px;
-    
-}
-
-.paciente2, .medico2{
-    width: 200px;
-    background-color: #9DF8FF;
-    margin-right: 30px;
-}
-
-#remision{
-    width:380px;
-    height:280px;
-    position: fixed;
-    right:40%;
-    top:20%;
-    border: 3px solid #111111;
-    text-align:center;
-}
-
-.nav{
-    border:solid #9DF8FF 2px;
-    width: 250px;
-    background-color: #9DF8FF;
-    border-radius: 12px;
-}
-
-.nav.hover{
-    transition: linear;
-    transition-duration: 300ms;
-    width: 150px;
-}
-
-.nav.li:hover{
-    background-color: aliceblue;
-    border:solid aliceblue 2px;
-}
-
-#pie{
-    height:100px;
-    background: rgb(40, 91, 150);
-    text-align: center;
-    font:30px;
-    font-family:cursive;
-    color:#ffffff;
-}

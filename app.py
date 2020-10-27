@@ -66,7 +66,8 @@ def ingresar_medico():
         usuario_med = request.form["us_med"]
         contarseña_med = request.form["pas_med"]
         conn = mysql.connection.cursor()
-        conn.execute("""insert into Medico(id_med,nom_med,ape_med,esp_med,tel_med,cor_med,dir_med) values(%s,%s,%s,%s,%s,%s,%s)""",(iden_med,nombre_med,apellido_med,especialidad_med,telefono_med,correo_med,direccion_med))
+        conn.execute("""insert into Medico(id_med,nom_med,ape_med,esp_med,tel_med,cor_med,dir_med)
+        values(%s,%s,%s,%s,%s,%s,%s)""",(iden_med,nombre_med,apellido_med,especialidad_med,telefono_med,correo_med,direccion_med))
         mysql.connection.commit()
         coon = mysql.connection.cursor()
         coon.execute("""insert into Usuario (cod_usu,nom_usu,pas_usu,rol_usu)
@@ -106,34 +107,26 @@ def ingresar_paciente():
         mysql.connection.commit()
         return redirect(url_for("paciente"))
         
-
-@app.route("/laboratorio")
-def laboratorio():
-    conn = mysql.connection.cursor()
-    conn.execute("select * from laboratorio")
-    mysql.connection.commit()
-    return render_template("f_laboratorio.html",laboratoros=laboratorio)
     
-
 @app.route("/consulta")
 def consulta():
     conn = mysql.connection.cursor()
-    conn.execute("select * from consulta")
+    conn.execute("select * from Consulta")
     mysql.connection.commit()
     return render_template("f_consulta.html", consultas = consulta)
 
-@app.route("/ingresar_consulta")
+@app.route("/ingresar_consulta", methods=["POST"])
 def ingresar_consulta():
-    if request.methods=="POST":
-        codCon = request.form["fechconsulta"]
-        fecCon = request.form["fechconsulta"]
-        horCon = request.form["fechconsulta"]
-        sintCon = request.form["fechconsulta"]
-        obsCon = request.form["fechconsulta"]
-        formCon = request.form["fechconsulta"]
-        estCon = request.form["fechconsulta"]
-        idPacCon = request.form["fechconsulta"]
-        idMedCon = request.form["fechconsulta"]
+    if request.method == "POST":
+        codCon = request.form["codCons"]
+        fecCon = request.form["fecCons"]
+        horCon = request.form["horCons"]
+        sintCon = request.form["sintPacCons"]
+        obsCon = request.form["obsCons"]
+        formCon = request.form["forCons"]
+        estCon = request.form["estCons"]
+        idPacCon = request.form["idPacCons"]
+        idMedCon = request.form["idMedCons"]
         conn = mysql.connection.cursor()
         conn.execute("""insert into Consulta
         (cod_cons,fec_cons,hora_cons,sint_cons,obse_cons,form_cons,esta_cons,id_pac_cons,id_med_cons) 
@@ -142,6 +135,13 @@ def ingresar_consulta():
         mysql.connection.commit()
         return redirect(url_for("consulta"))
 
+
+@app.route("/laboratorio")
+def laboratorio():
+    conn = mysql.connection.cursor()
+    conn.execute("select * from laboratorio")
+    mysql.connection.commit()
+    return render_template("f_laboratorio.html", laboratoros = laboratorio)
 
 @app.route("/remision")
 def remision():
@@ -158,6 +158,7 @@ def encabezado():
 @app.route("/footer")
 def footer():
     return render_template("footer.html")
+
 
 if __name__ == "__main__":
    app.run(debug=True, port=3000)

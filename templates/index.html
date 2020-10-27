@@ -1,30 +1,38 @@
 {% extends "base.html" %}
 {% block body %}
-<button data-mod-target="#mod" id="usuarioI" class="btn" type="button" name="iniciar">Iniciar sesion</button>
+<header id="cuerpo">
+    <h1>CLINICA COLOMBIA<h1>
+<header>
+    <button data-mod-target="#mod" id="usuarioI" class="btn" type="button" name="iniciar">Iniciar
+        sesion</button>
+    <div class="mod" id="mod">
+        <div class="mod-header">
+            <div class="title">INICIO DE SESION</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="mod-body">
+            <form id="inicio" action="/login" , method="POST">
+                <table>
+                    <tr>
+                        <td><label for="nomUs">Nombre:</label></td>
+                        <td><input type="text" name="nomUsu" id="nomUsu" placeholder="Ingresar Usuario"
+                                required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="conUs">Contraseña:</label></td>
+                        <td><input type="password" name="pasUsu" id="pasUsu"
+                                placeholder="Ingresar contraseña" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" class="btnIni" name="ingresar" value="Ingresar">
+                        <input type="submit" class="btnIni" name="registrar" value="Registrar">
+                        <input type="button" class="btnIni" name="salir" value="Salir"
+                                data-close-button=""></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div id="overlay"></div>
 
-<div class="mod" id="mod">
-    <div class="mod-header">
-        <div class="title">INICIO DE SESION</div>
-        <button data-close-button class="close-button">&times;</button>
-    </div>
-    <div class="mod-body">
-        <form id="inicio" action="/login" method="POST">
-            <table>
-                <tr>
-                    <td><label for="nomUs">Nombre:</label></td>
-                    <td><input type="text" name="nomUsu" id="nomUsu" placeholder="Ingresar Usuario" required></td>
-                </tr>
-                <tr>
-                    <td><label for="conUs">Contraseña:</label></td>
-                    <td><input type="password" name="pasUsu" id="pasUsu" placeholder="Ingresar contraseña" required></td>
-                </tr>
-                    <td><input type="submit" class="btnIni" name="ingresar"value="Ingresar"></td>
-                    <td><input type="submit" class="btnIni" name="registrar" value="Registrar"></td>
-                    <td><input type="button" class="btnIni" name="salir" value="Salir" data-close-button="" ></td>
-                </tr>
-            </table>
-        </form>   
-    </div>
-</div>
-<div id="overlay"></div>
-{% endblock %}
+    {% endblock %}

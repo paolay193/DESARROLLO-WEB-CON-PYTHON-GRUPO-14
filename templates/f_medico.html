@@ -1,82 +1,61 @@
+{% include 'encabezado.html'%}
+{%block encabezado%}
+<div>
+
+</div>
+{%endblock%}s
 {% extends 'base.html' %}
 {% block body %}
-<form id="medico" action ="/ingresar_medico", method="POST">
-    <table>
+<form class="formularios" id="medico" action ="/ingresar_medico", method="POST">
+    <table class="medico">
         <h3 id="titulo">Medico<h3>
         <tr>
-            <td>
-                <label for="id">Identificacion:</label>
-            </td>
-            <td>
-                <input type="text" name="id_med" id="idMed" class="medico2" required>
-            </td>
+            <td><label for="id">Identificacion:</label></td>
+            <td><input type="text" name="id_med" id="idMed" class="medico2" required></td>
         </tr>
         <tr>
-            <td>
-                <label for="name">Nombre:</label>
-            </td>
-            <td>
-                <input type="text" name="name_med" id="nameMed" class="medico2" required>
-            </td>
+            <td><label for="name">Nombre:</label></td>
+            <td><input type="text" name="name_med" id="nameMed" class="medico2" required></td>
         </tr>
         <tr>
-            <td>
-                <label for="apellido">Apellido:</label>
-            </td>
-            <td>
-                <input type="text" name="apel_med" id="apelMed" class="medico2" required>
-            </td>
+            <td><label for="apellido">Apellido:</label></td>
+            <td><input type="text" name="apel_med" id="apelMed" class="medico2" required></td>
         </tr>
         <tr>
-            <td>
-                <label for="telefono">Telefono:</label>
-            </td>
-            <td>
-                <input type="number" name="tele_med" id="telMed" class="medico2" required>
-            </td>
+            <td><label for="telefono">Telefono:</label></td>
+            <td><input type="number" name="tele_med" id="telMed" class="medico2" required></td>
         </tr>
         <tr>
-            <td>
-                <label for="email">Correo:</label>
-            </td>
-            <td>
-                <input type="text" name="ema_med" id="emlMed" class="medico2" required> 
-            </td>
+            <td><label for="email">Correo:</label></td>
+            <td><input type="text" name="ema_med" id="emlMed" class="medico2" required> </td>
         </tr>
         <tr>
+            <td><label for="especialidad">Especialidad</label></td>
             <td>
-                <label for="especialidad">Especialidad</label>
-            </td>
-            <td>
-            <select name="esp_med" id="espe_med" class="medico2">
+                <select name="esp_med" id="espe_med" class="medico2">
                     <option value="1">Cirujano</option>
                     <option value="2">Ortopedista</option>
+                    <option value="2">Pediatra</option>
+                    <option value="2">Dermatología.</option>
+                    <option value="2">Ginecología y obstetricia</option>
+                    <option value="2">Oftalmología</option>
+                    <option value="2">Otorrinolaringología</option>
+                    <option value="2">Traumatología</option>
+                    <option value="2">Urología</option>
                 </select>
             </td>
         </tr>
         <tr>
-            <td>
-                <label for="direccion">Direccion</label>
-            </td>
-            <td>
-                <input type="text" name="dir_med" id="dirMed" class="medico2" required>
-            </td>
+            <td><label for="direccion">Direccion</label></td>
+            <td><input type="text" name="dir_med" id="dirMed" class="medico2" required></td>
         </tr>
         <tr>
-            <td>
-                <label for="usu2">Usuario</label>
-            </td>
-            <td>
-                <input type="text" name="us_med" id="us_med" class="medico2">
-            </td>
+            <td><label for="usu2">Usuario</label></td>
+            <td><input type="text" name="us_med" id="us_med" class="medico2"></td>
         </tr>    
         <tr>
-            <td>
-                <label for="pas_med">Contraseña</label>
-            </td>
-            <td>
-                <input type="password" name="pas_med" id="pas_Med" class="medico2">
-            </td>
+            <td><label for="pas_med">Contraseña</label></td>
+            <td><input type="password" name="pas_med" id="pas_Med" class="medico2"></td>
         </tr>
         <tr>
             <td colspan="2">
@@ -89,5 +68,4 @@
 </form>
 {% endblock %}
 
-    
-        
+       

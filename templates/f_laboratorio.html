@@ -1,36 +1,25 @@
-<link rel="Stylesheet" href="/static/css/Style.css">
-<form action="/laboratorio", method="POST">
-    <div id="cuerpo">
-        <header id="encabezado">
-            <h1>CLINICA COLOMBIA<H1>
-        <header>
-        </div>
-    <div id="laboratorio">
+{% include 'encabezado.html'%}
+{%block encabezado%}
+<div>
+
+</div>
+{%endblock%}
+{% include 'base.html' %}
+{%block body%}
+<div class="formularios" id="laboratorio">
     <table>
         <h3 id="titulo">Laboratorio<h3>
        <tr> 
-           <td> 
-                <label for="codigo" >Codigo:</label>   
-            </td>
-            <td>  
-                <input  type="number" name="codigo" id="codLab" required > 
-            </td>
+           <td><label for="codigo" >Codigo:</label></td>
+            <td><input  type="number" name="codigo" id="codLab" required ></td>
         </tr> 
         <tr> 
-            <td> 
-                <label for="codigo">Codigo de la consulta:</label>
-            </td>
-            <td>
-                 <input type="text"  name="codigo" id="codiCon" required>  
-            </td>
+            <td><label for="codigo">Codigo de la consulta:</label></td>
+            <td><input type="text" name="codigo" id="codiCon" required></td>
         </tr>
         <tr>
-            <td> 
-                <label for="examen">Examen de laboratorio:</label>
-            </td>
-            <td>
-                <input type="text"  name="examen" id="exam">
-            </td>
+            <td><label for="examen">Examen de laboratorio:</label></td>
+            <td><input type="text" name="examen" id="exam"></td>
         </tr> 
         <tr>
             <td colspan="2">
@@ -41,3 +30,4 @@
         </tr>
     </table>
 </form>
+{% endblock %}
